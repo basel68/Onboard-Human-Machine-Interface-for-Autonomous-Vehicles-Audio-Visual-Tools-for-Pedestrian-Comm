@@ -1,0 +1,2 @@
+../Core/Src/WS2812B_led.c:12:13:WS2812B_spi	48	static
+../Core/Src/WS2812B_led.c:33:6:WS2812B_send	24	static

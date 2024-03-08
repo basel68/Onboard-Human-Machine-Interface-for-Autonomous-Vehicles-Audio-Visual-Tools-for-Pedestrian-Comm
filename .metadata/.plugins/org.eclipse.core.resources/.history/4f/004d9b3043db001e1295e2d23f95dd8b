@@ -1,0 +1,16 @@
+/*
+ * WS2812B_led.h
+ *
+ *  Created on: Mar 5, 2024
+ *      Author: BASSEL
+ *      Header file for the WS2812B LED strip module
+ */
+
+#ifndef INC_WS2812B_LED_H_
+#define INC_WS2812B_LED_H_
+
+//number of leds
+#define NUM_LEDS 8
+
+
+#endif /* INC_WS2812B_LED_H_ */

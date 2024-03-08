@@ -1,0 +1,10 @@
+/*
+ * msp.c
+ *
+ *  Created on: Mar 5, 2024
+ *      Author: BASSEL
+ */
+
+void HAL_MspInit(){
+
+}

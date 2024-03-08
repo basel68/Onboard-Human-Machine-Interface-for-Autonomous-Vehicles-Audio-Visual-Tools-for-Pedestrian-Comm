@@ -1,0 +1,43 @@
+/*
+ * WS2812B_led.h
+ *
+ *  Created on: Mar 5, 2024
+ *      Author: BASSEL
+ *      Header file for the WS2812B LED strip module
+ */
+
+#ifndef INC_WS2812B_LED_H_
+//#define INC_WS2812B_LED_H_
+//#include "main.h"
+//#include <string.h>
+//extern SPI_HandleTypeDef hspi1;
+//#define GREEN 0xDB6DB6
+////#define GREEN (0xFF)<<16
+//#define RED (0xFF)<<8
+//#define BLUE (0xFF)
+//#define RESET 0
+//
+//
+//
+//typedef struct
+//{
+//	uint8_t led_number; //leds total count
+//	uint32_t color; //leds color
+//}led_struct_handle_t;
+//
+//
+//void WS2812B_send(led_struct_handle_t* led_handle);
+#define WS2812_NUM_LEDS 20
+#define WS2812_SPI_HANDLE hspi1
+
+#define WS2812_RESET_PULSE 60
+#define WS2812_BUFFER_SIZE (WS2812_NUM_LEDS * 24 + WS2812_RESET_PULSE)
+
+extern SPI_HandleTypeDef hspi1;
+extern uint8_t ws2812_buffer[];
+
+void ws2812_init(void);
+void ws2812_send_spi(void);
+void ws2812_pixel(uint16_t led_no, uint8_t r, uint8_t g, uint8_t b);
+void ws2812_pixel_all(uint8_t r, uint8_t g, uint8_t b);
+#endif /* INC_WS2812B_LED_H_ */

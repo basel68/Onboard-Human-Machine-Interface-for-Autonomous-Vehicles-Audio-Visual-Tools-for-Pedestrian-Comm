@@ -1,0 +1,10 @@
+18:13:50 **** Incremental Build of configuration Debug for project WS2812B_LED_DMA_DEMO ****
+make -j12 all 
+arm-none-eabi-size   WS2812B_LED_DMA_DEMO.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14684	    112	   3136	  17932	   460c	WS2812B_LED_DMA_DEMO.elf
+Finished building: default.size.stdout
+ 
+
+18:13:51 Build Finished. 0 errors, 0 warnings. (took 471ms)
+
