@@ -1,2 +1,2 @@
-../Core/Src/WS2812B_led.c:12:6:Set_LED	1
-../Core/Src/WS2812B_led.c:20:6:WS2812_Send	6
+../Core/Src/WS2812B_led.c:20:6:Set_LED	1
+../Core/Src/WS2812B_led.c:30:6:WS2812_Send	6

@@ -1,6 +1,6 @@
-../Core/Src/main_app.c:17:5:main	1
-../Core/Src/main_app.c:59:6:system_clock_config_HSI	5
-../Core/Src/main_app.c:120:13:TIM1_Init	3
-../Core/Src/main_app.c:151:13:DMA_Init	1
-../Core/Src/main_app.c:163:6:HAL_TIM_PWM_PulseFinishedCallback	1
-../Core/Src/main_app.c:169:6:Error_Handler	1
+../Core/Src/main_app.c:17:5:main	7
+../Core/Src/main_app.c:71:6:system_clock_config_HSI	5
+../Core/Src/main_app.c:136:13:TIM1_Init	3
+../Core/Src/main_app.c:172:13:DMA_Init	1
+../Core/Src/main_app.c:184:6:HAL_TIM_PWM_PulseFinishedCallback	1
+../Core/Src/main_app.c:193:6:Error_Handler	1

@@ -23,5 +23,5 @@ extern TIM_HandleTypeDef htim1;
 
 //led strip control functions
 void Set_LED (uint8_t LEDnum, uint8_t Red, uint8_t Green, uint8_t Blue);
-void WS2812_Send (void);
+void WS2812_Send (uint32_t color);
 #endif /* INC_WS2812B_LED_H_ */

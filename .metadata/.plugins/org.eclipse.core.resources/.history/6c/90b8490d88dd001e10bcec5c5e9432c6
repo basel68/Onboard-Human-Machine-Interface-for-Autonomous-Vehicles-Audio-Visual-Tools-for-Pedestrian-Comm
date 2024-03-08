@@ -26,40 +26,34 @@ int main (){
 
 
 
-	while(1){//alternates between red green blue
+	while(1){
 
+		 WS2812_Send(GREEN);
+				  HAL_Delay(1000);
 
-	  for(int i=0;i<20;i++){
-		   Set_LED(i, 0, 0, 0);
-		  }
-	   WS2812_Send();
-	   HAL_Delay(1000);
-	   for(int i=0;i<20;i++){
-		   Set_LED(i, 0,0, 255);
-		  }
-	  WS2812_Send();
-	  HAL_Delay(1000);
-	  for(int i=0;i<20;i++){
-		   Set_LED(i, 0, 0, 0);
-		  }
-
-	   WS2812_Send();
-	   for(int i=0;i<20;i++){
-		   Set_LED(i, 255, 0, 0);
-		  }
-	  WS2812_Send();
-	  HAL_Delay(1000);
-	  for(int i=0;i<20;i++){
-		   Set_LED(i, 0, 0, 0);
-		  }
-
-	   WS2812_Send();
-
-	   for(int i=0;i<20;i++){
-		   Set_LED(i, 0, 255,0);
-		  }
-		  WS2812_Send();
-		  HAL_Delay(1000);
+				  WS2812_Send(OFF);
+				  HAL_Delay(1000);
+//				  for(int i=0;i<20;i++){
+//				   	   Set_LED(i, 0, 0, 0);
+//				   	  }
+//				  HAL_Delay(500);
+//
+//				   WS2812_Send();
+//				   for(int i=0;i<20;i++){
+//				 	   Set_LED(i, 0, 255, 0);
+//				 	  }
+//				 	  WS2812_Send();
+//					 	 HAL_Delay(500);
+//					 		  for(int i=0;i<20;i++){
+//					 		   	   Set_LED(i, 0, 0, 0);
+//					 		   	  }
+//					 		  HAL_Delay(500);
+//
+//					 		   WS2812_Send();
+//					 		   for(int i=0;i<20;i++){
+//					 		 	   Set_LED(i, 255, 0, 0);
+//					 		 	  }
+//					 		 	  WS2812_Send();
 	}
 
 	return 0;

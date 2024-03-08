@@ -59,7 +59,6 @@ int main (){
 		   Set_LED(i, 0, 255,0);
 		  }
 		  WS2812_Send();
-		  HAL_Delay(1000);
 	}
 
 	return 0;

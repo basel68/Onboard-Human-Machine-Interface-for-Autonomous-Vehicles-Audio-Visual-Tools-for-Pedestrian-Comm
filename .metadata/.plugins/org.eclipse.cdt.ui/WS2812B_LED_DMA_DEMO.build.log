@@ -1,10 +1,29 @@
-18:13:50 **** Incremental Build of configuration Debug for project WS2812B_LED_DMA_DEMO ****
+22:25:41 **** Incremental Build of configuration Debug for project WS2812B_LED_DMA_DEMO ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main_app.d" -MT"Core/Src/main_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_app.o"
+../Core/Src/main_app.c: In function 'Error_Handler':
+../Core/Src/main_app.c:194:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  194 |         printf("error occured\n");
+      |         ^~~~~~
+../Core/Src/main_app.c:10:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    9 | #include "main.h"
+  +++ |+#include <stdio.h>
+   10 | 
+../Core/Src/main_app.c:194:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  194 |         printf("error occured\n");
+      |         ^~~~~~
+../Core/Src/main_app.c:194:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "WS2812B_LED_DMA_DEMO.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Bachelor thesis\Workspace\WS2812B_LED_DMA_DEMO\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WS2812B_LED_DMA_DEMO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: WS2812B_LED_DMA_DEMO.elf
+ 
 arm-none-eabi-size   WS2812B_LED_DMA_DEMO.elf 
+arm-none-eabi-objdump -h -S  WS2812B_LED_DMA_DEMO.elf  > "WS2812B_LED_DMA_DEMO.list"
    text	   data	    bss	    dec	    hex	filename
-  14684	    112	   3136	  17932	   460c	WS2812B_LED_DMA_DEMO.elf
+  15020	    112	   3216	  18348	   47ac	WS2812B_LED_DMA_DEMO.elf
 Finished building: default.size.stdout
  
+Finished building: WS2812B_LED_DMA_DEMO.list
+ 
 
-18:13:51 Build Finished. 0 errors, 0 warnings. (took 471ms)
+22:25:42 Build Finished. 0 errors, 2 warnings. (took 1s.274ms)
 

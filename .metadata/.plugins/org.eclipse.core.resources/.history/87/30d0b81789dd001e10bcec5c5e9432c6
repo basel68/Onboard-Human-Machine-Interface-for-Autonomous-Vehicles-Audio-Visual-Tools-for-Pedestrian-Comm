@@ -33,15 +33,16 @@ int main (){
 		   Set_LED(i, 0, 0, 0);
 		  }
 	   WS2812_Send();
-	   HAL_Delay(1000);
+	   HAL_Delay(2000);
 	   for(int i=0;i<20;i++){
-		   Set_LED(i, 0,0, 255);
+		   Set_LED(i, 255, 0, 0);
 		  }
 	  WS2812_Send();
-	  HAL_Delay(1000);
+	  HAL_Delay(2000);
 	  for(int i=0;i<20;i++){
 		   Set_LED(i, 0, 0, 0);
 		  }
+	  HAL_Delay(1000);
 
 	   WS2812_Send();
 	   for(int i=0;i<20;i++){
@@ -52,14 +53,13 @@ int main (){
 	  for(int i=0;i<20;i++){
 		   Set_LED(i, 0, 0, 0);
 		  }
+	  HAL_Delay(1000);
 
 	   WS2812_Send();
-
 	   for(int i=0;i<20;i++){
-		   Set_LED(i, 0, 255,0);
+		   Set_LED(i, 0, 0, 255);
 		  }
 		  WS2812_Send();
-		  HAL_Delay(1000);
 	}
 
 	return 0;
