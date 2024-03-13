@@ -10,6 +10,7 @@
 #include "CS43L22.h"
 #include <stdio.h>
 #include <math.h>
+#include "audio.h"
 static void i2c_init();
 static void i2s_init();
 static void DMA_init();
@@ -17,15 +18,14 @@ static void gpio_init();
 I2C_HandleTypeDef hi2c1;
 I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;
-#define PI 3.14159265358979323846
-#define sinfreq 1000
-#define sampling_rate 48000
-#define buffer_length sampling_rate/sinfreq
-uint16_t buffer_audio[2*buffer_length];
-int main (){
+ uint16_t* PASS_audio_data_16bit = ( uint16_t*)(&PASS_audio_wav);
+ uint16_t* STOP_audio_data_16bit = ( uint16_t*)(&STOP_audio_wav);
+
+ int main (){
 
 	HAL_Init();
 	system_clock_config_HSI(SYS_CLOCK_FREQ_144_MHZ);
+	printf("main\n");
 	gpio_init();
 	DMA_init();
 	i2c_init();
@@ -34,15 +34,35 @@ int main (){
 	if(status){
 		Error_Handler();
 	}
-	for(int i = 0; i < buffer_length; i++)
-	{
-	    buffer_audio[2 * i] = 10000 * sin((2 * PI * sinfreq * i) / sampling_rate);
-	    buffer_audio[2 * i + 1] = 10000 * sin((2 * PI * sinfreq * i) / sampling_rate);
-	}
-	Audio_play(buffer_audio, 2 * buffer_length);
+
+
+//    Audio_play(audio_data_16bit, PASS_audio_wav_size);
+//    HAL_Delay(2000);
+//    Audio_mute();
+//while(1);
+while(1){
+    // Play the audio
+
+	 Audio_play(PASS_audio_data_16bit, PASS_audio_wav_size);
+
+	 HAL_Delay(1500);
+
+	 Audio_play(STOP_audio_data_16bit, STOP_audio_wav_size);
+
+	 HAL_Delay(1500);
+}
+
+
+
+//	Audio_play(buffer_audio, 2 * buffer_length);
 
 
 	return 0;
+}
+ void HAL_I2S_TxCpltCallback(I2S_HandleTypeDef *hi2s){
+
+
+
 }
 void system_clock_config_HSI(uint8_t clock_freq ){
 	  RCC_OscInitTypeDef osc_init = {0};

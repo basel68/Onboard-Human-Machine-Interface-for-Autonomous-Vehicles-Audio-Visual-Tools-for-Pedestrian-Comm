@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="slave"/>
+		<item key="selection" value="0x01"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="0x01"/>
+			<item value="DMA_mode"/>
+			<item value="61"/>
 			<item value="slave"/>
 			<item value="HAL_TIM_PWM_PulseFinishedCallback"/>
 			<item value="I2S_Data_Format"/>
@@ -20,9 +23,6 @@
 			<item value="I2C"/>
 			<item value="I2C1"/>
 			<item value="TIM_OSSR_Off_State_Selection_for_Run_mode_state"/>
-			<item value="RCC_PLL_Config"/>
-			<item value="RCC_HSI_Config"/>
-			<item value="RCC_Oscillator_Type"/>
 		</list>
 		<list key="replacehistory">
 		</list>

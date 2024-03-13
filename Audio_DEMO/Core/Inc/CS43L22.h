@@ -15,7 +15,7 @@ extern I2S_HandleTypeDef hi2s3;
 #define CS43122_I2S                hi2s3
 
 #define CS43122_I2C_ADDRESS         0x94
-//#define CS43122_I2C_ADDRESS        (0x49 << 1)
+#define CS43122_I2C_ADDRESSR        0x95
 #define BYTE 1
 #define CS43122_RST_Pin            Audio_RST_Pin
 #define CS43122_RST_Port           Audio_RST_GPIO_Port
@@ -60,4 +60,7 @@ int Audio_pause();
 int Audio_play(uint16_t *buffer,uint32_t size);
 int Audio_mute();
 __weak void i2s_cplt_callback(void);
+
+
+
 #endif /* INC_CS43L22_H_ */
