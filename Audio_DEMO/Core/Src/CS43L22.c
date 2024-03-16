@@ -30,8 +30,8 @@ int Audio_init(){
 	if(i2c_status){
 		return i2c_status;
 	}
-	// enable autodetect CLK and MCLK/2, page 41
-	i2c_data=0b10000001;
+	// enable autodetect CLK , page 41
+	i2c_data=0b10000000;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_CLKCON_REG, BYTE, &i2c_data, BYTE, 100);
 	if(i2c_status){
 			return i2c_status;
