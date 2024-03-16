@@ -18,8 +18,8 @@ static void gpio_init();
 I2C_HandleTypeDef hi2c1;
 I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;
- uint16_t* PASS_audio_data_16bit = ( uint16_t*)(&PASS_audio_wav);
- uint16_t* STOP_audio_data_16bit = ( uint16_t*)(&STOP_audio_wav);
+uint16_t* PASS_audio_data_16bit = ( uint16_t*)(&PASS_audio_wav);
+uint16_t* STOP_audio_data_16bit = ( uint16_t*)(&STOP_audio_wav);
 
  int main (){
 
