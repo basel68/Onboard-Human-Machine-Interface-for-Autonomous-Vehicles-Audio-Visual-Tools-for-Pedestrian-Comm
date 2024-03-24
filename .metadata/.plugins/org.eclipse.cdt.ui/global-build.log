@@ -1,7 +1,7 @@
-01:08:30 **** Incremental Build of configuration Debug for project Audio_DEMO ****
+01:22:20 **** Incremental Build of configuration Debug for project LED_AUDIO_RTOS ****
 make -j12 all 
-arm-none-eabi-size   Audio_DEMO.elf 
+arm-none-eabi-size   LED_AUDIO_RTOS.elf 
    text	   data	    bss	    dec	    hex	filename
- 125268	    120	   2160	 127548	  1f23c	Audio_DEMO.elf
+ 137436	    128	  80648	 218212	  35464	LED_AUDIO_RTOS.elf
 Finished building: default.size.stdout
  

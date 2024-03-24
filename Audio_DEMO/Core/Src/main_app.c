@@ -7,14 +7,13 @@
 
 
 #include "main.h"
-#include "CS43L22.h"
-#include <stdio.h>
-#include <math.h>
-#include "audio.h"
+
+
+
 static void i2c_init();
 static void i2s_init();
-static void DMA_init();
-static void gpio_init();
+static void DMA1_init();
+static void Audio_RST_gpio_init();
 I2C_HandleTypeDef hi2c1;
 I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;
@@ -26,8 +25,8 @@ uint16_t* STOP_audio_data_16bit = ( uint16_t*)(&STOP_audio_wav);
 	HAL_Init();
 	system_clock_config_HSI(SYS_CLOCK_FREQ_144_MHZ);
 	printf("main\n");
-	gpio_init();
-	DMA_init();
+	Audio_RST_gpio_init();
+	DMA1_init();
 	i2c_init();
 	i2s_init();
 	int status =Audio_init();
@@ -168,7 +167,7 @@ static void i2s_init(){
 		Error_Handler();
 	 }
 }
-static void gpio_init(){
+static void Audio_RST_gpio_init(){
 	  GPIO_InitTypeDef GPIO_InitStruct = {0};
 	  __HAL_RCC_GPIOD_CLK_ENABLE();
 	  /*Configure GPIO pin : Audio_RST_Pin */
@@ -179,7 +178,7 @@ static void gpio_init(){
 	  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 }
 
-static void DMA_init(){
+static void DMA1_init(){
 
 	  /* DMA controller clock enable */
 	  __HAL_RCC_DMA1_CLK_ENABLE();
