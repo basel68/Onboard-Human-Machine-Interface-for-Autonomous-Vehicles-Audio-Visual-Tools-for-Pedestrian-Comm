@@ -20,8 +20,22 @@ extern I2S_HandleTypeDef hi2s3;
 #define CS43122_RST_Pin            Audio_RST_Pin
 #define CS43122_RST_Port           Audio_RST_GPIO_Port
 
+//Messages macros
 #define POWERUP 					0b10011110
+#define HED_SPK_EN 					0b10101010
+#define HED_SPK_DI 					0xff
+#define HED_SPK_MUTE 				0x01
+#define HED_SPK_UNMUTE 				0x00
+#define POWEROFF 					0x01
+#define AUTO_CLK_EN 				0b10000000
+#define _24BIT_16DATA 				0b00000111
+#define SOFT_DE_EMPH 				0b00000110
+#define PCM_VOL_DI 				    0x00
+#define PCM_VOL_EN 				    0x80
 
+
+
+//register mapping
 #define CS43122_ID_REG              0x01
 #define CS43122_POWER1_REG          0x02
 #define CS43122_POWER2_REG          0x04
@@ -38,8 +52,10 @@ extern I2S_HandleTypeDef hi2s3;
 #define CS43122_PASSVOLBCON_REG     0x15
 #define CS43122_PCMAVOLCON_REG      0x1a
 #define CS43122_PCMBVOLCON_REG      0x1b
-#define CS43122_HEADVOLA_REG         0x22
+#define CS43122_HEADVOLA_REG        0x22
 #define CS43122_HEADVOLB_REG        0x23
+#define CS43122_SPEAKERVOLA_REG     0x24
+#define CS43122_SPEAKERVOLB_REG     0x25
 
 // Enumeration for codec states
 typedef enum

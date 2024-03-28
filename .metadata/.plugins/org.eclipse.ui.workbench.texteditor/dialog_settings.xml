@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="CAN_time_quantum_in_bit_segment_2"/>
+		<item key="selection" value="EN"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="EN"/>
 			<item value="CAN_time_quantum_in_bit_segment_2"/>
 			<item value="CAN_time_quantum_in_bit_segment_1"/>
 			<item value="CAN_operating_mode"/>
@@ -22,7 +23,6 @@
 			<item value="I2S_Audio_Frequency"/>
 			<item value="I2S_Clock_Source"/>
 			<item value="I2S_Mode"/>
-			<item value="I2C_duty_cycle_in_fast_mode"/>
 		</list>
 		<list key="replacehistory">
 		</list>

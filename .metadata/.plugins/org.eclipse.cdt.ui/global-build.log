@@ -1,21 +1,26 @@
-17:33:15 **** Incremental Build of configuration Debug for project CAN_RX_DEMO ****
+04:30:55 **** Build of configuration Debug for project LED_AUDIO_RTOS ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main_app.d" -MT"Core/Src/main_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_app.o"
-arm-none-eabi-gcc -o "CAN_RX_DEMO.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Bachelor thesis\Workspace\CAN_RX_DEMO\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CAN_RX_DEMO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CAN_RX_DEMO.elf
+arm-none-eabi-gcc "../Core/Src/CS43L22.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/include" -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/CS43L22.d" -MT"Core/Src/CS43L22.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/CS43L22.o"
+arm-none-eabi-gcc "../Core/Src/Task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/include" -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Task_handler.d" -MT"Core/Src/Task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Task_handler.o"
+arm-none-eabi-gcc "../Core/Src/WS2812B_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/include" -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/WS2812B_led.d" -MT"Core/Src/WS2812B_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/WS2812B_led.o"
+arm-none-eabi-gcc "../Core/Src/it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/include" -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/it.d" -MT"Core/Src/it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/it.o"
+arm-none-eabi-gcc "../Core/Src/main_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/include" -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main_app.d" -MT"Core/Src/main_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_app.o"
+arm-none-eabi-gcc "../Core/Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/include" -I"D:/Bachelor thesis/Workspace/LED_AUDIO_RTOS/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/msp.d" -MT"Core/Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/msp.o"
+../Core/Src/Task_handler.c: In function 'led_strip_handler':
+../Core/Src/Task_handler.c:15:28: warning: implicit declaration of function 'Set_LED' [-Wimplicit-function-declaration]
+   15 |                            Set_LED(i, 0, 0, 0);
+      |                            ^~~~~~~
+../Core/Src/Task_handler.c:17:20: warning: implicit declaration of function 'WS2812_Send' [-Wimplicit-function-declaration]
+   17 |                    WS2812_Send();
+      |                    ^~~~~~~~~~~
+arm-none-eabi-gcc -o "LED_AUDIO_RTOS.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Bachelor thesis\Workspace\LED_AUDIO_RTOS\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_AUDIO_RTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_AUDIO_RTOS.elf
  
-arm-none-eabi-size   CAN_RX_DEMO.elf 
-arm-none-eabi-objdump -h -S  CAN_RX_DEMO.elf  > "CAN_RX_DEMO.list"
+arm-none-eabi-size   LED_AUDIO_RTOS.elf 
+arm-none-eabi-objdump -h -S  LED_AUDIO_RTOS.elf  > "LED_AUDIO_RTOS.list"
    text	   data	    bss	    dec	    hex	filename
-  13544	    112	   1944	  15600	   3cf0	CAN_RX_DEMO.elf
+ 137500	    128	  80648	 218276	  354a4	LED_AUDIO_RTOS.elf
 Finished building: default.size.stdout
-Finished building: CAN_RX_DEMO.list
  
- 
-17:33:30 **** Incremental Build of configuration Debug for project CAN_RX_DEMO ****
-make -j12 all 
-arm-none-eabi-size   CAN_RX_DEMO.elf 
-   text	   data	    bss	    dec	    hex	filename
-  13544	    112	   1944	  15600	   3cf0	CAN_RX_DEMO.elf
-Finished building: default.size.stdout
+Finished building: LED_AUDIO_RTOS.list
  

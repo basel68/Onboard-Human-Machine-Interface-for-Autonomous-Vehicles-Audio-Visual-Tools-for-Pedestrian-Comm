@@ -19,11 +19,11 @@ int Audio_init(){
 	HAL_GPIO_WritePin(CS43122_RST_Port, CS43122_RST_Pin, GPIO_PIN_SET);
 	HAL_Delay(1000);
 	//power off the codec, page 38
-	i2c_data=0x01;
+	i2c_data=POWEROFF;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_POWER1_REG, BYTE, &i2c_data, BYTE, 100);
 
-	// enable the headphones 0xaf,page 39
-	i2c_data=0b10101111;
+	// enable the headphones and speakers 0xaa,page 39
+	i2c_data=HED_SPK_EN;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_POWER2_REG, BYTE, &i2c_data, BYTE, 100);
 
 	//if there is no error and i2c is not busy the status will be HAL_OK WHICH IS 0 SO if cond is skipped
@@ -31,31 +31,32 @@ int Audio_init(){
 		return i2c_status;
 	}
 	// enable autodetect CLK , page 41
-	i2c_data=0b10000000;
+	i2c_data=AUTO_CLK_EN;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_CLKCON_REG, BYTE, &i2c_data, BYTE, 100);
 	if(i2c_status){
 			return i2c_status;
 	}
 	// i2s up to 24 bit interface ,16 bit data length, page 41
-	i2c_data=0b00000111;
+	i2c_data=_24BIT_16DATA;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_INTERCON1_REG, BYTE, &i2c_data, BYTE, 100);
 	if(i2c_status){
 			return i2c_status;
 	}
 	// enable soft ramp and de-emphasis filter, page 45
-	i2c_data=0b00000110;
+	i2c_data=SOFT_DE_EMPH;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_MISC0N_REG, BYTE, &i2c_data, BYTE, 100);
 	if(i2c_status){
 			return i2c_status;
 	}
 	// PCM Volume adjust , page 48
-	i2c_data=0x80;
+	i2c_data=PCM_VOL_EN;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_PCMAVOLCON_REG, BYTE, &i2c_data, BYTE, 100);
-	i2c_data=0x00;
+	i2c_data=PCM_VOL_DI;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_PCMBVOLCON_REG, BYTE, &i2c_data, BYTE, 100);
 	if(i2c_status){
 			return i2c_status;
 	}
+	//DATASHEET INIT SEQUENCE
 	// Step 1: Write 0x99 to register 0x00
 	uint8_t data = 0x99;
 	i2c_status = HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, 0x00, BYTE, &data, sizeof(data), HAL_MAX_DELAY);
@@ -116,14 +117,16 @@ int Audio_init(){
 int Audio_mute(){
 	HAL_StatusTypeDef i2c_status;
 	uint8_t i2c_data;
-	//headphone off, page 38
-	i2c_data=0xff;
+	//headphone and speakers off, page 38
+	i2c_data=HED_SPK_DI;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_POWER2_REG, BYTE, &i2c_data, BYTE, 100);
 
-	//mute headphone A and B, page 52
-	i2c_data=0x01;
+	//mute headphone and speakers  A and B, page 52
+	i2c_data=HED_SPK_MUTE;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_HEADVOLA_REG, BYTE, &i2c_data, BYTE, 100);
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_HEADVOLB_REG, BYTE, &i2c_data, BYTE, 100);
+	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_SPEAKERVOLA_REG, BYTE, &i2c_data, BYTE, 100);
+	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_SPEAKERVOLB_REG, BYTE, &i2c_data, BYTE, 100);
 
 	return i2c_status;
 
@@ -160,7 +163,7 @@ int Audio_pause(){
 			return i2c_status;
 		}
 		//power off the codec, page 38
-		i2c_data=0x01;
+		i2c_data=POWEROFF;
 		i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_POWER1_REG, BYTE, &i2c_data, BYTE, 100);
 		if(i2c_status){
 			return i2c_status;
@@ -182,7 +185,7 @@ int Audio_stop(){
 			return i2c_status;
 		}
 		//power off the codec, page 38
-		i2c_data=0x01;
+		i2c_data=POWEROFF;
 		i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_POWER1_REG, BYTE, &i2c_data, BYTE, 100);
 		if(i2c_status){
 			return i2c_status;
@@ -219,13 +222,15 @@ int Audio_unmute(){
 	HAL_StatusTypeDef i2c_status;
 	uint8_t i2c_data;
 
-	//unmute headphone A and B, page 52
-	i2c_data=0x00;
+	//unmute headphone and speakers A and B, page 52
+	i2c_data=HED_SPK_UNMUTE;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_HEADVOLA_REG, BYTE, &i2c_data, BYTE, 100);
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_HEADVOLB_REG, BYTE, &i2c_data, BYTE, 100);
+	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_SPEAKERVOLA_REG, BYTE, &i2c_data, BYTE, 100);
+	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_SPEAKERVOLB_REG, BYTE, &i2c_data, BYTE, 100);
 
-	//headphone on, page 38
-	i2c_data=0xaf;
+	//headphone and speakers on, page 38
+	i2c_data=HED_SPK_EN;
 	i2c_status=HAL_I2C_Mem_Write(&CS43122_I2C, CS43122_I2C_ADDRESS, CS43122_POWER2_REG, BYTE, &i2c_data, BYTE, 100);
 	return i2c_status;
 }
