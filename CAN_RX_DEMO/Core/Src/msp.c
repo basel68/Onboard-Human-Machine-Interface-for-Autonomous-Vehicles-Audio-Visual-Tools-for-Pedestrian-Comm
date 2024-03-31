@@ -46,6 +46,7 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef *hcan)
 	   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 	 }
 	//enable can receive interrupt irq handler in arm processor
+	HAL_NVIC_EnableIRQ(CAN1_TX_IRQn);
 	HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
 }
 

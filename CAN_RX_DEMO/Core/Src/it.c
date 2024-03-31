@@ -14,6 +14,10 @@ void CAN1_RX0_IRQHandler(void){
 
 	HAL_CAN_IRQHandler(&hcan1);
 }
+void CAN1_TX_IRQHandler(void)
+{
+	HAL_CAN_IRQHandler(&hcan1);
+}
 void SysTick_Handler(void)
 {
 
