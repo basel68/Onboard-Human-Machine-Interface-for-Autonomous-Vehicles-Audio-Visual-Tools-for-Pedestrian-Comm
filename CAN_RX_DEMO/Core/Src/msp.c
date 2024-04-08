@@ -5,8 +5,7 @@
  *      Author: BASSEL
  */
 #include "main.h"
-extern DMA_HandleTypeDef hdma_tim1_ch1;
-extern DMA_HandleTypeDef hdma_spi3_tx;
+
 //will do low level processor specific inits.
 void HAL_MspInit(void)
 {
