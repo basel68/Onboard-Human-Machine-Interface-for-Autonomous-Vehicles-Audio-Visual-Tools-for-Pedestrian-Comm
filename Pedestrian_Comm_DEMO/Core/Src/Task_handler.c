@@ -19,16 +19,16 @@ void led_strip_handler(){
 		   for(int i=5;i<20;i++){
 			   Set_LED(i, 255,0, 0);
 			  }
-		  WS2812_Send();
+		  WS2812_Send(20);
 		  vTaskDelay(1000);
 		  for(int i=0;i<5;i++){
 			   Set_LED(i, 0, 0, 0);
 			  }
-//		  for(int i=5;i<20;i++){
-//			   Set_LED(i, 255,0, 0);
-//			  }
+		  for(int i=5;i<20;i++){
+			   Set_LED(i, 255,0, 0);
+			  }
 
-		   WS2812_Send();
+		   WS2812_Send(5);
 		   vTaskDelay(1000);
 		   for(int i=0;i<5;i++){
 			   Set_LED(i, 0, 0, 255);
@@ -36,7 +36,7 @@ void led_strip_handler(){
 //		   for(int i=5;i<20;i++){
 //			   Set_LED(i, 255,0, 0);
 //			  }
-		  WS2812_Send();
+		  WS2812_Send(5);
 		  vTaskDelay(1000);
 		  for(int i=0;i<20;i++){
 			   Set_LED(i, 0, 0, 0);
@@ -44,7 +44,7 @@ void led_strip_handler(){
 //		  UBaseType_t uxHighWaterMark;
 //		  uxHighWaterMark = uxTaskGetStackHighWaterMark(NULL);
 //		  printf("LedTask unused stack: %lu words\n", uxHighWaterMark);
-		   WS2812_Send();
+		   WS2812_Send(20);
 
 
 		}

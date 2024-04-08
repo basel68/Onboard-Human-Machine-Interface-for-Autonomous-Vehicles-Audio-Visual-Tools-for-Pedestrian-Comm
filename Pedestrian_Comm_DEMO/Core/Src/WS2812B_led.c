@@ -27,13 +27,13 @@ void Set_LED (uint8_t LEDnum, uint8_t Red, uint8_t Green, uint8_t Blue){
 /**
   * @brief  set the correct values for the red green blue colors according to the ws2812b datasheet and then sends daat through pwm pin
   */
-void WS2812_Send (void)
+void WS2812_Send (uint8_t num_leds)
 {
 	uint32_t indx=0;
 	uint32_t color;
 
 
-	for (int i= 0; i<MAX_LED; i++)
+	for (int i= 0; i<num_leds; i++)
 	{
 
 		color = ((LED_Data[i][1]<<16) | (LED_Data[i][2]<<8) | (LED_Data[i][3]));
