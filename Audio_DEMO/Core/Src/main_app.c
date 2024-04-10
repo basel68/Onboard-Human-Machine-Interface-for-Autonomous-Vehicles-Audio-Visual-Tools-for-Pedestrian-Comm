@@ -39,17 +39,26 @@ uint16_t* STOP_audio_data_16bit = ( uint16_t*)(&STOP_audio_wav);
 //    HAL_Delay(2000);
 //    Audio_mute();
 //while(1);
-while(1){
+	int i=0;
+//while(1){
     // Play the audio
 
-	 Audio_play(PASS_audio_data_16bit, PASS_audio_wav_size);
-
-	 HAL_Delay(1500);
+//	 Audio_play(PASS_audio_data_16bit, PASS_audio_wav_size);
 
 	 Audio_play(STOP_audio_data_16bit, STOP_audio_wav_size);
-
 	 HAL_Delay(1500);
-}
+
+//	 Audio_play(STOP_audio_data_16bit, STOP_audio_wav_size);
+	 Audio_play(PASS_audio_data_16bit, PASS_audio_wav_size);
+	 HAL_Delay(1500);
+	 Audio_stop();
+	 Audio_play(STOP_audio_data_16bit, STOP_audio_wav_size);
+	 HAL_Delay(1500);
+	 Audio_resume();
+	 Audio_play(STOP_audio_data_16bit, STOP_audio_wav_size);
+	 i++;
+//}
+
 
 
 

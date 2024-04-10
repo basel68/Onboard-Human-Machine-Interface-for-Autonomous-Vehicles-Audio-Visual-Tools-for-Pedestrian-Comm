@@ -1,26 +1,22 @@
-17:15:32 **** Incremental Build of configuration Debug for project Pedestrian_Comm_DEMO ****
+03:26:21 **** Incremental Build of configuration Debug for project Audio_DEMO ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/CS43L22.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/CS43L22.d" -MT"Core/Src/CS43L22.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/CS43L22.o"
-arm-none-eabi-gcc "../Core/Src/Task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Task_handler.d" -MT"Core/Src/Task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Task_handler.o"
-arm-none-eabi-gcc "../Core/Src/WS2812B_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/WS2812B_led.d" -MT"Core/Src/WS2812B_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/WS2812B_led.o"
-arm-none-eabi-gcc "../Core/Src/it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/it.d" -MT"Core/Src/it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/it.o"
-arm-none-eabi-gcc "../Core/Src/main_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main_app.d" -MT"Core/Src/main_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_app.o"
-arm-none-eabi-gcc "../Core/Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/Bachelor thesis/Workspace/Pedestrian_Comm_DEMO/ThirdParty/FreeRTOS/include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/msp.d" -MT"Core/Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/msp.o"
-arm-none-eabi-gcc -o "Pedestrian_Comm_DEMO.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Bachelor thesis\Workspace\Pedestrian_Comm_DEMO\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Pedestrian_Comm_DEMO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Pedestrian_Comm_DEMO.elf
+arm-none-eabi-gcc "../Core/Src/Audio_Pass_Amp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Audio_Pass_Amp.d" -MT"Core/Src/Audio_Pass_Amp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Audio_Pass_Amp.o"
+arm-none-eabi-gcc "../Core/Src/Audio_stop_amp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Audio_stop_amp.d" -MT"Core/Src/Audio_stop_amp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Audio_stop_amp.o"
+arm-none-eabi-gcc -o "Audio_DEMO.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Bachelor thesis\Workspace\Audio_DEMO\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Audio_DEMO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Audio_DEMO.elf
  
-arm-none-eabi-size   Pedestrian_Comm_DEMO.elf 
-arm-none-eabi-objdump -h -S  Pedestrian_Comm_DEMO.elf  > "Pedestrian_Comm_DEMO.list"
+arm-none-eabi-size   Audio_DEMO.elf 
+arm-none-eabi-objdump -h -S  Audio_DEMO.elf  > "Audio_DEMO.list"
    text	   data	    bss	    dec	    hex	filename
-  95156	    124	  80700	 175980	  2af6c	Pedestrian_Comm_DEMO.elf
+ 127496	    120	   2160	 129776	  1faf0	Audio_DEMO.elf
 Finished building: default.size.stdout
  
-Finished building: Pedestrian_Comm_DEMO.list
+Finished building: Audio_DEMO.list
  
-17:52:34 **** Incremental Build of configuration Debug for project Pedestrian_Comm_DEMO ****
+03:26:34 **** Incremental Build of configuration Debug for project Audio_DEMO ****
 make -j12 all 
-arm-none-eabi-size   Pedestrian_Comm_DEMO.elf 
+arm-none-eabi-size   Audio_DEMO.elf 
    text	   data	    bss	    dec	    hex	filename
-  95156	    124	  80700	 175980	  2af6c	Pedestrian_Comm_DEMO.elf
+ 127496	    120	   2160	 129776	  1faf0	Audio_DEMO.elf
 Finished building: default.size.stdout
  

@@ -22,16 +22,18 @@ extern I2S_HandleTypeDef hi2s3;
 
 //Messages macros
 #define POWERUP 					0b10011110
-#define HED_SPK_EN 					0b10101010
-#define HED_SPK_DI 					0xff
-#define HED_SPK_MUTE 				0x01
-#define HED_SPK_UNMUTE 				0x00
-#define POWEROFF 					0x01
+#define HED_SPK_PWR_EN 				0b10101010
+#define HED_SPK_PWR_DI 				0x7f
+#define HED_SPK_MUTE 				0xff
+#define HED_SPK_UNMUTE 				0x3f
+#define HED_SPK_VOL_DOWN 			0x01
+#define HED_SPK_VOL_UP 				0x00
+#define POWEROFF 					0b10011111
 #define AUTO_CLK_EN 				0b10000000
 #define _24BIT_16DATA 				0b00000111
 #define SOFT_DE_EMPH 				0b00000110
 #define PCM_VOL_DI 				    0x00
-#define PCM_VOL_EN 				    0x80
+#define PCM_VOL_EN 				    0b10011000
 
 
 
@@ -44,6 +46,7 @@ extern I2S_HandleTypeDef hi2s3;
 #define CS43122_INTERCON2_REG       0x07
 #define CS43122_PASSA_REG           0x08
 #define CS43122_PASSB_REG           0x09
+#define CS43122_Analog_ZC_REG       0x0a
 #define CS43122_GANGCON_REG         0x0c
 #define CS43122_PLAYCON1_REG        0x0d
 #define CS43122_PLAYCON2_REG        0x0f

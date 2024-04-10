@@ -6,7 +6,7 @@
  */
 
 
-/* Contents of file PASS_audio.wav */
+
 const long int PASS_audio_wav_size = 45176;
 const unsigned char PASS_audio_wav[45176] = {
  0x10, 0x00, 0x12, 0x00,
