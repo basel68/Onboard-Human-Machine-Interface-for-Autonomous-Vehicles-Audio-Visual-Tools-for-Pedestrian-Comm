@@ -67,6 +67,9 @@ typedef enum
 #define SYS_CLOCK_FREQ_50_MHZ 4
 
 #define PED_DETECTED 1
+//ARM CORTEX M4 CONTROL REGISTER TO ENABLE CYCLE COUNTING
+#define DWT_CTRL    (*(volatile uint32_t*)0xE0001000)
+#define CYCLE_COUNTING 0
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

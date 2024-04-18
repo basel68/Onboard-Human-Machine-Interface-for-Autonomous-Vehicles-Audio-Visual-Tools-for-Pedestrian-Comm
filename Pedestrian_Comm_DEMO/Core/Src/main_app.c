@@ -29,8 +29,6 @@ void CAN_Filter_Config(void);
 void system_clock_config_HSI(uint8_t clock_freq);
 int main (){
 	BaseType_t status;
-
-
 	HAL_Init();// HAL layer initialization
 
 	system_clock_config_HSI(SYS_CLOCK_FREQ_72_MHZ);//configuring clock at 72MHZ
@@ -58,6 +56,12 @@ int main (){
 		Error_Handler();
 
 	}
+	 //CYCLCNT enable for SEGGER SYSVIEW TO WORK WITH TIMESTAMPS
+	  DWT_CTRL |= ( 1 << CYCLE_COUNTING);
+	  //Configure SYSVIEW and start the trace
+	  SEGGER_SYSVIEW_Conf();
+	  SEGGER_SYSVIEW_Start();
+
 	//xTaskCreate(pxTaskCode, pcName, usStackDepth, pvParameters, uxPriority, pxCreatedTask) .. FreeRTOS API
 
 	 status = xTaskCreate(led_strip_handler, "LED_strip_task", 200,NULL, 2, &led_Strip_handle);

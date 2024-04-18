@@ -11,6 +11,7 @@ void led_strip_handler(){
 	uint32_t pulNotificationValueled;
 	while(1){//displays red visual light
 
+		//Wait for the pedestrian detection notification
 		xTaskNotifyWait(0,0,&pulNotificationValueled,portMAX_DELAY);
 
 		   for(int i=0;i<5;i++){
@@ -20,7 +21,7 @@ void led_strip_handler(){
 			   Set_LED(i, 255,0, 0);
 			  }
 		  WS2812_Send(20);
-		  vTaskDelay(1000);
+		  vTaskDelay(pdMS_TO_TICKS(1000));
 		  for(int i=0;i<5;i++){
 			   Set_LED(i, 0, 0, 0);
 			  }
@@ -29,15 +30,12 @@ void led_strip_handler(){
 			  }
 
 		   WS2812_Send(5);
-		   vTaskDelay(1000);
+		   vTaskDelay(pdMS_TO_TICKS(1000));
 		   for(int i=0;i<5;i++){
 			   Set_LED(i, 0, 0, 255);
 			  }
-//		   for(int i=5;i<20;i++){
-//			   Set_LED(i, 255,0, 0);
-//			  }
 		  WS2812_Send(5);
-		  vTaskDelay(1000);
+		  vTaskDelay(pdMS_TO_TICKS(1000));
 		  for(int i=0;i<20;i++){
 			   Set_LED(i, 0, 0, 0);
 			  }
@@ -53,7 +51,7 @@ void led_strip_handler(){
 void Audio_handler(){
 	uint32_t pulNotificationValueaudio;
 	while(1){
-
+		//Wait for the pedestrian detection notification
 		xTaskNotifyWait(0,0,&pulNotificationValueaudio,portMAX_DELAY);
 	    // Play the audio
 
@@ -61,12 +59,12 @@ void Audio_handler(){
 //		  UBaseType_t uxHighWaterMark;
 //		  uxHighWaterMark = uxTaskGetStackHighWaterMark(NULL);
 //		  printf("AudioTask1 unused stack: %lu words\n", uxHighWaterMark);
-		 vTaskDelay(1500);
+		 vTaskDelay(pdMS_TO_TICKS(1500));
 
 		 Audio_play(STOP_audio_data_16bit, STOP_audio_wav_size);
 
 //		  uxHighWaterMark = uxTaskGetStackHighWaterMark(NULL);
 //		  printf("AudioTask2 unused stack: %lu words\n", uxHighWaterMark);
-		 vTaskDelay(1500);
+		 vTaskDelay(pdMS_TO_TICKS(1500));
 	}
 }

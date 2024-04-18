@@ -23,6 +23,8 @@ void HAL_MspInit(void)
 	HAL_NVIC_SetPriority(MemoryManagement_IRQn,0,0);
 	HAL_NVIC_SetPriority(BusFault_IRQn,0,0);
 	HAL_NVIC_SetPriority(UsageFault_IRQn,0,0);
+	//Automatically done by the vTaskStartScheduler call in the main func but its needed by the segger sysview before that thats why its done here.
+	vInitPrioGroupValue();
 }
 
 /* Init the low level hardware : GPIO, CLOCK, NVIC... */
