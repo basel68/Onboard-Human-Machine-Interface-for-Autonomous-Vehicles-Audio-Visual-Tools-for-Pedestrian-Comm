@@ -311,21 +311,22 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
 			// First notification for the led strip
 			xTaskNotifyFromISR(led_Strip_handle, (uint32_t)PED_DETECTED, eNoAction, &xHigherPriorityTaskWoken1);
 
-			// Second notification fot the audio
+			// Second notification for the audio
 			xTaskNotifyFromISR(Audio_handle, (uint32_t)PED_DETECTED, eNoAction, &xHigherPriorityTaskWoken2);
 
 			curr_state=WARNING;
+			/* Force a context switch if xHigherPriorityTaskWoken is now set to pdTRUE.
+			    The macro used to do this is dependent on the port and may be called
+			    portEND_SWITCHING_ISR.
+			    checking first if either the first or second notification will yield a context switch
+			    */
+			if(xHigherPriorityTaskWoken1 || xHigherPriorityTaskWoken2){
+			    portYIELD_FROM_ISR(pdTRUE);
+			} else {
+			    portYIELD_FROM_ISR(pdFALSE);
+			}
 		}
-		/* Force a context switch if xHigherPriorityTaskWoken is now set to pdTRUE.
-		    The macro used to do this is dependent on the port and may be called
-		    portEND_SWITCHING_ISR.
-		    checking first if either the first or second notification will yield a context switch
-		    */
-		if(xHigherPriorityTaskWoken1 || xHigherPriorityTaskWoken2){
-		    portYIELD_FROM_ISR(pdTRUE);
-		} else {
-		    portYIELD_FROM_ISR(pdFALSE);
-		}
+
 }
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 {
